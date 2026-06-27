@@ -22,6 +22,7 @@ HTML & CSS／Webデザインの学習記録リポジトリです。
 | 2026-06-16 | 第2章（続き） 表・フォーム・ラベル（table／tr・th・td・colspan・rowspan・コメントアウト／form・input各種・select・textarea／label・id属性） | notes/2026-06-16.md ／ chapter2/ |
 | 2026-06-17〜23 | 第2章ラスト〜第3章 グループ分けとCSSの基本（グループ分けタグ／CSSの適用・基本文法・単位／文字装飾／Webフォント／色・配色／背景／幅・高さ・余白・線／リスト装飾／クラスとID／Flexbox） | notes/2026-06-17_23.md ／ chapter3/ |
 | 2026-06-24 | 第3章（続き〜3-18） Flexboxの揃え・CSSグリッド・レイアウト設計・リセットCSS（align-items／align-content／CSSグリッド：display:grid・grid-template-columns・grid-template-rows・gap・fr／視線の流れ Z型・F型／優先順位／ress.css） | notes/2026-06-24.md ／ chapter3/ |
+| 2026-06-27 | 第4章 シングルカラムのWebサイト制作スタート（4-1〜4-5途中）（シングルカラムとは／制作の流れ／headの記述：meta・title・description・CSS読み込み／モバイルファースト・viewport・デベロッパーツール検証／header作成：ロゴ・ナビのHTML＋共通CSS） | notes/2026-06-27.md ／ chapter4/ |
 
 > 第1章はWeb制作の前提となる「考え方」と「仕組み」を学ぶ概念中心の章のため、コードファイルはなし（コーディングは第2章以降）。
 
@@ -473,6 +474,55 @@ HTML & CSS／Webデザインの学習記録リポジトリです。
 
 ---
 
+### 第4章 シングルカラムのWebサイトを制作する
+
+> この章から「WCB CAFE」という1つのWebサイトを、ステップごとに完成させていく。まずはシングルカラムのホームページから。
+
+#### 4-1 シングルカラムとは
+- **概念**：縦に並んだ列を**カラム**、それを垂直方向に区切って組んだものを**カラムレイアウト**という。1カラムで作るのが**シングルカラム**。
+- **特徴**：余白を十分に確保でき、大きな画像で印象的なデザインを作れる。上から下への一方向に視線を誘導でき、内容に集中させやすい。**画面の小さなモバイルデバイスと相性が良い**。
+- **POINT**：一度に表示できる情報量が限られるため、アイテム数の多いショッピング・ギャラリーサイトには不向き。その場合は複数カラムの**マルチカラム**（第5章）を使う。
+
+#### 4-2 シングルカラムページの制作の流れ
+- **作成するページ**：Webサイトの顔となるホームページ。大きな画像を一面に配置し、ロゴ `<h1>`・ナビ `<nav><ul><li>`・キャッチコピー `<h2>`・文章 `<p>`・ボタン `<a>`・背景画像 `<div>` で構成する。
+- **制作の流れ**：
+
+| 手順 | 内容 |
+|---|---|
+| 01 | 「head」部分の記述（ページ情報） |
+| 02 | ロゴ・ナビゲーションメニューの作成（**全ページ共通**部分） |
+| 03 | コンテンツ部分の作成（キャッチコピー・文章・ボタン・表。ボタンにはホバー時のアニメーションを付ける） |
+| 04 | ファビコンの設定（タブに表示される小さなアイコン） |
+
+#### 4-3 「head」を記述しよう
+- **ファイル準備**：フォルダー `WCBCafe` を作り、中に `index.html` を新規作成。さらに `css/style.css`、`images/`（ロゴ等）を用意する。
+- **head の中身**：`<meta charset="utf-8">`（文字コード）／`<title>`（タブのタイトル）／`<meta name="description">`（ページ説明文）。
+- **CSSの読み込み（順番が重要）**：
+
+| 順 | 読み込むもの | 役割 |
+|---|---|---|
+| 1 | `ress.css`（リセットCSS） | ブラウザー差をなくす。必ず最初 |
+| 2 | Google Fonts（`Philosopher`） | 見出し用フォント。`preconnect` で事前接続 |
+| 3 | `css/style.css`（自作） | 最後に書く。先頭に置くとリセット等で上書きされる |
+
+#### 4-4 モバイルファーストで作成する準備
+- **モバイルファースト**：表示領域に応じて表示を切り替える手法を**レスポンシブWebデザイン**という。本書はまずモバイル幅で作り、後からデスクトップを足す**モバイルファースト**で進める（スマホ表示が速くなる利点）。逆は**デスクトップファースト**。
+- **viewport**：表示領域を端末幅に合わせる指定。これがないとスマホでデスクトップ幅のまま縮小表示され読みづらい。
+  - `<meta name="viewport" content="width=device-width, initial-scale=1">`
+- **確認方法**：Chromeの**デベロッパーツール**（右クリック→「検証」、または `Cmd/Ctrl + Shift + C`）。左上の「2つの四角が重なったアイコン」でデバイスサイズを切り替え。パネルの3点メニューから固定位置（左／下／右／別ウィンドウ）を変更できる。英語表示は歯車→Language→日本語で切替。
+
+#### 4-5 「header」部分を作ろう
+- **HTML**：`<body>` 内に `<header class="page-header">` を置き、`<h1 class="align-center">` にロゴ画像（`<a>` で囲んだ `<img class="logo">`）、`<nav>` 内の `<ul class="main-nav font-english">` に News／Menu／Contact のリンクを記述。ヘッダーは全ページ共通部分。
+- **CSS共通部分**：`@charset "UTF-8";`（1行目・文字化け防止）／`html { font-size: 100%; }`（初期値・ユーザー設定を尊重）／`body` に書体・`line-height`・文字色／`a { text-decoration: none; }`（下線消去）／`img { max-width: 100%; }`（はみ出し防止）。
+
+| プロパティ | 役割 |
+|---|---|
+| `text-align: center`（`.align-center`） | ロゴなどを中央揃え（共通クラスとして使い回す） |
+| `padding-top: .5rem`（`.page-header`） | ヘッダー上の余白（`rem`＝`html`の文字サイズ基準） |
+| `width: 210px`（`.logo`） | 大きすぎるロゴ画像の横幅を調整 |
+
+---
+
 ## 学習した主な構文 / 制作の基礎知識
 
 > ⚠️ 第1章には **書いて動かすHTML/CSSの構文は登場しません**（概念中心）。
@@ -786,6 +836,71 @@ ul { list-style-type: square; }   /* 黒四角に変更 */
 </head>
 ```
 
+### 第4章 シングルカラムサイト「WCB CAFE」制作（4-3〜4-5・最小サンプル）
+
+```html
+<!-- ===== 4-3〜4-4 head：meta / title / description / CSS読み込み / viewport ===== -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>WCB Cafe</title>
+    <meta name="description" content="ブレンドコーヒーとヘルシーなオーガニックフードを提供するカフェ">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 4-4 端末幅に合わせる -->
+
+    <!-- リセットCSS（必ず最初） -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+    <!-- Googleフォント（見出し Philosopher） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+
+    <!-- 自作CSS（いちばん下） -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body></body>
+</html>
+```
+
+```html
+<!-- ===== 4-5 header：ロゴ（h1）＋ナビ（nav）。全ページ共通部分 ===== -->
+<header class="page-header">
+  <h1 class="align-center">
+    <a href="index.html"><img class="logo" src="images/logo.svg" alt="WCBカフェ ホーム"></a>
+  </h1>
+  <nav>
+    <ul class="main-nav font-english">
+      <li><a href="news.html">News</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+```
+
+```css
+/* ===== 4-5 style.css 共通部分＋ヘッダー ===== */
+@charset "UTF-8";                /* 1行目・文字化け防止 */
+
+/* 共通部分 */
+html { font-size: 100%; }        /* 16px固定にせず初期値/ユーザー設定を尊重 */
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
+  line-height: 1.7;              /* 行間 */
+  color: #432;                   /* 文字色（3桁＝#443322の短縮） */
+}
+a { text-decoration: none; }     /* リンクの下線を消す */
+img { max-width: 100%; }         /* 画像が親要素よりはみ出さない（レスポンシブの基本） */
+
+/* レイアウト（共通クラス） */
+.align-center { text-align: center; }
+
+/* ヘッダー */
+.page-header { padding-top: .5rem; } /* rem＝htmlの文字サイズ基準 */
+.logo { width: 210px; }              /* ロゴの横幅を調整 */
+```
+
 ---
 
 ## フォルダ構成
@@ -866,6 +981,14 @@ html-css-learning/
 │   ├── c3-17/                 # 3-17 CSSグリッド（display:grid / grid-template-columns・rows / gap / fr）
 │   └── c3-18/                 # 3-18 リセットCSS（ress.css の読み込み・読み込み順）
 │   # ※ 3-1 CSSとは・3-8 配色・3-9 配色例 は概念中心のためコードなし
+├── chapter4/                  # 第4章 シングルカラムサイト「WCB CAFE」制作（教材のサンプル番号に対応）
+│   └── WCBCafe/               # 制作中のサイト本体
+│       ├── index.html         # 4-3〜4-5 head（meta/title/description/CSS読み込み/viewport）＋ header（ロゴ・ナビ）
+│       ├── css/
+│       │   └── style.css      # 4-5 共通部分（@charset/html/body/a/img）＋ヘッダー（.align-center/.page-header/.logo）
+│       └── images/
+│           └── logo.svg       # ロゴ画像（サンプルデータ）
+│   # ※ 4-1 シングルカラムとは・4-2 制作の流れ は概念中心のためコードなし
 ├── css/
 │   └── style.css              # 装飾用CSS
 ├── images/                    # 画像ファイル置き場（共通）
@@ -874,10 +997,11 @@ html-css-learning/
     ├── 2026-06-12_15.md       # 第2章 HTMLの基本（2-1〜2-9）
     ├── 2026-06-16.md          # 第2章 表・フォーム・ラベル（2-10〜2-12）
     ├── 2026-06-17_23.md       # 第2章ラスト〜第3章 グループ分けとCSSの基本（2-13〜3-16）
-    └── 2026-06-24.md          # 第3章（続き〜3-18） Flexboxの揃え・CSSグリッド・レイアウト設計・リセットCSS（3-16続き〜3-18）
+    ├── 2026-06-24.md          # 第3章（続き〜3-18） Flexboxの揃え・CSSグリッド・レイアウト設計・リセットCSS（3-16続き〜3-18）
+    └── 2026-06-27.md          # 第4章 シングルカラムのWebサイト制作スタート（4-1〜4-5途中）
 ```
 
-> `chapter3/` 内のフォルダ名は教材のサンプル番号に対応する想定です。実際にコミットした練習ファイルに合わせて適宜調整してください。
+> `chapter3/`・`chapter4/` 内のフォルダ名は教材のサンプル番号に対応する想定です。実際にコミットした練習ファイルに合わせて適宜調整してください。
 
 ---
 
