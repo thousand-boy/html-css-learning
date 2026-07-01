@@ -39,7 +39,6 @@ img {
     width: 210px;
 }
 
-/* ↓ 追加 ↓ ------------------------------- */
 .main-nav {
     display: flex;
     justify-content: center;
@@ -53,4 +52,31 @@ img {
 .main-nav a:hover {
     color: #0bd;
 }
-/* ↑ 追加 ↑ ------------------------------- */
+.page-title,
+.heading-large {
+    font-size: 3rem;
+    text-align: center;
+}
+.page-title {
+    margin-top: 2rem;
+    line-height: 1.4;
+}
+.heading-large {
+    margin-bottom: 1rem;
+}
+.cover {
+    background-size: cover;
+    background-position: bottom;
+    height: 800px;
+}
+.cover-home {
+    background-image: url(../images/cover-home-s.webp);
+}
+.about {
+    max-width: 736px;
+    padding: 0 1.5rem;
+    margin: 3rem auto 0;
+}
+.about p {
+    margin-bottom: 3rem;
+}
