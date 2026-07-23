@@ -1768,5 +1768,5 @@ html-css-learning/
 
 | 著者 | タイトル | 出版社 | 出版年 |
 | :--- | :--- | :--- | :--- | :--- |
-| Mana | [1冊ですべて身につくHTML & CSSとWebデザイン入門講座［第2版］](https://www.sbcr.jp/product/4815618469/) | SBクリエイティブ | 2024年 
-| Progate | [HTML & CSS 初級編・中級編](https://progate.com/) | 株式会社Progate（オンライン教材） | ─ 
+| Mana | [1冊ですべて身につくHTML & CSSとWebデザイン入門講座［第2版］](https://www.sbcr.jp/product/4815618469/) | SBクリエイティブ | 2024年  
+| Progate | [HTML & CSS 初級編・中級編](https://progate.com/) | 株式会社Progate（オンライン教材） | ─  
