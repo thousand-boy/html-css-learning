@@ -1760,9 +1760,7 @@ html-css-learning/
     └── 2026-07-07.md          # 第7章 外部メディア(Contact) 制作（7-1〜7-10：地図/mailto/Instagram/X/YouTube/レスポンシブ2カラム/OGP/マイマップ）
 ```
 
-> `chapter3/`〜`chapter6/` 内のフォルダ名は教材のサンプル番号に対応する想定です。実際にコミットした練習ファイルに合わせて適宜調整してください。
 > ※「WCB CAFE」は第4〜6章で継続制作する同一サイトです（`index.html`＝ホーム／`news.html`＝第5章／`menu.html`＝第6章）。上記は章ごとの追加分を分けて表記した想定構成のため、実際は1つのサイトフォルダーにまとめて配置している場合があります。
-> ※画像ファイル名はデスクトップ用 `-l.webp`／モバイル用 `-s.webp` を教材写真から確認済みですが、`.cover-home` のモバイル用のみ拡張子（.jpg / .webp）が判読困難でした（※未確認）。`menu3`・`menu7`〜`menu9` のメニュー名も写真から判読できませんでした（※未確認）。
 
 ---
 
@@ -1770,5 +1768,5 @@ html-css-learning/
 
 | 著者 | タイトル | 出版社 | 出版年 | ステータス |
 | :--- | :--- | :--- | :--- | :--- |
-| Mana | [1冊ですべて身につくHTML & CSSとWebデザイン入門講座［第2版］](https://www.sbcr.jp/product/4815618469/) | SBクリエイティブ | 2024年 | 学習中 (In Progress) |
-| Progate | [HTML & CSS 初級編・中級編](https://progate.com/) | 株式会社Progate（オンライン教材） | ─ | 学習中 (In Progress) |
+| Mana | [1冊ですべて身につくHTML & CSSとWebデザイン入門講座［第2版］](https://www.sbcr.jp/product/4815618469/) | SBクリエイティブ | 2024年 |
+| Progate | [HTML & CSS 初級編・中級編](https://progate.com/) | 株式会社Progate（オンライン教材） | ─ |
