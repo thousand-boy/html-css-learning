@@ -1628,136 +1628,32 @@ iframe { width: 100%; }   /* 地図を枠幅いっぱいに */
 ```
 html-css-learning/
 ├── README.md
-├── .gitignore
-├── chapter2/                  # 第2章 実践コード（教材のサンプル番号に対応）
-│   ├── c2-02-1/
-│   │   └── index.html         # 2-2 HTMLファイルの基本
-│   ├── c2-05-1/
-│   │   └── index.html         # 2-5 見出し（h1〜h6）
-│   ├── c2-06-1/
-│   │   └── index.html         # 2-6 段落（p）
-│   ├── c2-07-1/
-│   │   ├── index.html         # 2-7 画像（img）
-│   │   └── sakura.jpg
-│   ├── c2-08/                 # 2-8 リンク（a）
-│   │   ├── c2-08-1/
-│   │   │   └── index.html     #   テキストリンク（href）
-│   │   ├── c2-08-2/
-│   │   │   ├── index.html     #   画像リンク（a で img を囲む）
-│   │   │   └── sakura.jpg
-│   │   └── c2-08-3/
-│   │       └── index.html     #   メールリンク（mailto）
-│   ├── c2-09/                 # 2-9 リスト
-│   │   ├── c2-09-1/
-│   │   │   └── index.html     #   箇条書き（ul / li）
-│   │   └── c2-09-2/
-│   │       └── index.html     #   番号付き（ol / li）
-│   ├── c2-10-1/
-│   │   └── index.html         # 2-10 基本的な表（table / tr / th / td）
-│   ├── c2-10-2/
-│   │   └── index.html         # 2-10 セルをつなげる前の基本表
-│   ├── c2-10-3/
-│   │   └── index.html         # 2-10 colspan（横方向にセルをつなげる）
-│   ├── c2-10-4/
-│   │   └── index.html         # 2-10 rowspan（縦方向にセルをつなげる）
-│   ├── c2-11-1/
-│   │   └── index.html         # 2-11 formタグの基本
-│   ├── c2-11-2/
-│   │   └── index.html         # 2-11 input type="text"（1行テキスト入力欄）
-│   ├── c2-11-3/
-│   │   └── index.html         # 2-11 placeholder属性
-│   ├── c2-11-4/
-│   │   └── index.html         # 2-11 input type="radio"（ラジオボタン）
-│   ├── c2-11-5/
-│   │   └── index.html         # 2-11 input type="checkbox"（チェックボックス）
-│   ├── c2-11-6/
-│   │   └── index.html         # 2-11 input type="submit"（送信ボタン）
-│   ├── c2-11-7/
-│   │   └── index.html         # 2-11 input type="image"（画像ボタン）
-│   ├── c2-11-8/
-│   │   └── index.html         # 2-11 select / option（セレクトボックス）
-│   ├── c2-11-9/
-│   │   └── index.html         # 2-11 textarea（複数行テキスト入力欄）
-│   ├── c2-11-10/
-│   │   └── index.html         # 2-11 textarea + placeholder
-│   ├── c2-12-1/
-│   │   └── index.html         # 2-12 label / for / id（ラベルの関連付け）
-│   └── c2-13-1/
-│       └── index.html         # 2-13 グループ分け（header/nav/main/article/section/aside/footer/div）
-├── chapter3/                  # 第3章 実践コード（CSS／教材のサンプル番号に対応）
-│   ├── c3-02/                 # 3-2 CSSを適用させる方法（link / style / style属性）
-│   ├── c3-03/                 # 3-3 CSSファイルを作ろう（@charset / link 読み込み）
-│   ├── c3-04/                 # 3-4 基本文法・複数指定・単位・子孫セレクター
-│   ├── c3-05/                 # 3-5 font-size / font-family / font-weight / line-height / text-align
-│   ├── c3-06/                 # 3-6 Webフォント（Google Fonts）
-│   ├── c3-07/                 # 3-7 color / background-color（カラーコード・RGB・色名）
-│   ├── c3-10/                 # 3-10 background-image / repeat / size / position / 一括指定
-│   ├── c3-11/                 # 3-11 width / height / 各種単位
-│   ├── c3-12/                 # 3-12 margin / padding（余白）
-│   ├── c3-13/                 # 3-13 border-width / style / color / 一括指定
-│   ├── c3-14/                 # 3-14 list-style-type / position / image / 一括指定
-│   ├── c3-15/                 # 3-15 クラスとID（. / # / タグ名併用 / 優先順位）
-│   ├── c3-16/                 # 3-16 Flexbox（display:flex / direction / wrap / justify-content / align-items / align-content）
-│   ├── c3-17/                 # 3-17 CSSグリッド（display:grid / grid-template-columns・rows / gap / fr）
-│   └── c3-18/                 # 3-18 リセットCSS（ress.css の読み込み・読み込み順）
-│   # ※ 3-1 CSSとは・3-8 配色・3-9 配色例 は概念中心のためコードなし
-├── chapter4/                  # 第4章 シングルカラムサイト「WCB CAFE」制作（教材のサンプル番号に対応）
-│   └── WCBCafe/               # 制作中のサイト本体
-│       ├── index.html         # 4-3〜4-5 head＋header ／ 4-6 cover・キャッチコピー ／ 4-7 section.about・ボタン ／ 4-9 footer（表・コピーライト）／ 4-10 wrapper追加 ／ 4-11 ファビコン読み込み
-│       ├── css/
-│       │   └── style.css      # 4-5 共通＋ヘッダー・ナビ(flex) ／ 4-6 .page-title・.cover/.cover-home ／ 4-7 .about・.btn・:hover ／ 4-8 transition ／ 4-9 .info(border-spacing/border-bottom)・.page-footer・.copyright ／ 4-10 .wrapper・@media(min-width:800px) ／ 4-12 .btn の scale/rotate/translate
-│       └── images/
-│           ├── logo.svg           # ロゴ画像（サンプルデータ）
-│           ├── favicon.png        # 4-11 ファビコン（32px以上の正方形PNG／簡略化ロゴ）
-│           ├── cover-home-s.webp  # 4-6 上部背景（モバイル縦長用）
-│           ├── cover-home-l.webp  # 4-10 上部背景（デスクトップ横長用）
-│           ├── footer-s.webp      # 4-9 下部背景（モバイル縦長用）
-│           └── footer-l.webp      # 4-10 下部背景（デスクトップ横長用）
-│   # ※ 4-1 シングルカラムとは・4-2 制作の流れ は概念中心のためコードなし
-├── chapter5/                  # 第5章 2カラム「News」ページ（WCB CAFE を継続制作）
-│   └── WCBCafe/               # ※第4章から続く同一サイト（news.html を追加）
-│       ├── news.html          # 5-3 head/クラス名/見出し ／ 5-4 main.wrapper・article.post（post-info/post-cat・time datetime）／ 5-5 aside.sidebar（Category/Archives・side-menu）／ 5-6 news-contents ／ 5-7 aside.ad（3カラム）
-│       ├── css/
-│       │   └── style.css      # 5-3 .sub-cover/.cover-news ／ 5-4 .post/.post-info/.post-cat/.post-thumbnail ／ 5-5 見出し共通化・.side-menu ／ 5-6 @media 2カラム(news-contents/.post 70%/.sidebar 22%) ／ 5-7 .ad・order・3カラム
-│       └── images/
-│           ├── cover-news-s.webp   # 5-3 News上部背景（モバイル）
-│           ├── cover-news-l.webp   # 5-6 News上部背景（デスクトップ）
-│           ├── outside.webp        # 5-4 記事サムネイル（店内の様子）
-│           └── banner.jpg          # 5-7 3カラム目のバナー画像
-│   # ※ 5-1 2カラムとは・5-2 制作の流れ は概念中心のためコードなし
-├── chapter6/                  # 第6章 タイル型「Menu」ページ（WCB CAFE を継続制作）
-│   └── WCBCafe/               # ※第4〜5章から続く同一サイト（menu.html を追加）
-│       ├── menu.html          # 6-3 head/クラス名/見出し ／ 6-4 main.wrapper.grid＋item×9（img/p）／ 6-6 item-big
-│       ├── css/
-│       │   └── style.css      # 6-3 .cover-menu ／ 6-4 .grid(display:grid/repeat(2,1fr)/gap)・.item img(aspect-ratio:1/1/object-fit:cover) ／ 6-5 @media 3列(repeat(3,1fr)) ／ 6-6 .item-big(grid-column/grid-row)・.item-big img
-│       └── images/
-│           ├── cover-menu-s.webp   # 6-3 Menu上部背景（モバイル）
-│           ├── cover-menu-l.webp   # 6-5 Menu上部背景（デスクトップ）
-│           └── menu1.webp 〜 menu9.webp  # 6-4 メニュー9品の画像（※一部メニュー名は判読不可）
-│   # ※ 6-1 タイル型とは・6-2 制作の流れ は概念中心のためコードなし
-├── chapter7/                  # 第7章 外部メディア「Contact」ページ（WCB CAFE を継続制作）
-│   └── WCBCafe/               # ※第4〜6章から続く同一サイト（contact.html を追加）
-│       ├── contact.html       # 7-2 head/クラス名(cover-contact)/見出しContact ／ 7-3 section.location・location-info(table.info)・location-map(Googleマップiframe) ／ 7-4 section.email・mailtoボタン ／ 7-5 section.sns・sns-item・Instagram(blockquote.instagram-media＋embed.js) ／ 7-6 X(twitter-timeline＋widgets.js) ／ 7-7 YouTube(iframe・sns-youtube) ／ 7-9 head内 OGP(og:各種) ／ 7-10 マイマップ iframe(maps/d/embed)
-│       ├── css/
-│       │   └── style.css      # 7-2 .cover-contact ／ 7-3 .location/.location-info/.info・iframe{width:100%} ／ 7-4 .email(max-width/背景/角丸/余白) ／ 7-5 .sns-item ／ 7-7 .sns-youtube(aspect-ratio:16/9)・iframe height:100% ／ 7-8 @media 2カラム(.location flex 32%/64%・.sns flex align-items:flex-start)・背景-l.webp差替
-│       └── images/
-│           ├── cover-contact-s.webp  # 7-2 Contact上部背景（モバイル／※拡張子は要確認）
-│           ├── cover-contact-l.webp  # 7-8 Contact上部背景（デスクトップ）
-│           └── ogp.png               # 7-9 OGP用シェア画像（Facebook推奨 1200×630px／※ファイル名は例）
-│   # ※ 7-1 制作の流れ は概念中心のためコードなし。地図・SNS等の埋め込みコードは各サービスで取得
-├── css/
-│   └── style.css              # 装飾用CSS
-├── images/                    # 画像ファイル置き場（共通）
-└── notes/
-    ├── 2026-06-10_11.md       # 第1章 Webサイトの基本
-    ├── 2026-06-12_15.md       # 第2章 HTMLの基本（2-1〜2-9）
-    ├── 2026-06-16.md          # 第2章 表・フォーム・ラベル（2-10〜2-12）
-    ├── 2026-06-17_23.md       # 第2章ラスト〜第3章 グループ分けとCSSの基本（2-13〜3-16）
-    ├── 2026-06-24.md          # 第3章（続き〜3-18） Flexboxの揃え・CSSグリッド・レイアウト設計・リセットCSS（3-16続き〜3-18）
-    ├── 2026-06-27.md          # 第4章 シングルカラムのWebサイト制作スタート（4-1〜4-5途中）
-    ├── 2026-06-28_07-01.md    # 第4章 シングルカラム制作（続き）4-5後半〜4-12（ロゴ/ナビ仕上げ・キャッチコピー/カバー画像・コンテンツ/ボタン・トランジション・footer・レスポンシブ・ファビコン・ボタンアニメ応用）
-    ├── 2026-07-02_06.md       # 第5〜6章 2カラム(News)・タイル型(Menu) 制作（5-1〜5-7／6-1〜6-6）
-    └── 2026-07-07.md          # 第7章 外部メディア(Contact) 制作（7-1〜7-10：地図/mailto/Instagram/X/YouTube/レスポンシブ2カラム/OGP/マイマップ）
+├── notes/                  # 学習ノート（日付ごと）
+│   ├── 2026-06-10_11.md    # 第1章
+│   ├── 2026-06-12_15.md    # 第2章 2-1〜2-9
+│   ├── 2026-06-16.md       # 第2章 2-10〜2-12
+│   ├── 2026-06-17_23.md    # 第2章ラスト〜第3章 2-13〜3-16
+│   ├── 2026-06-24.md       # 第3章 3-16続き〜3-18
+│   ├── 2026-06-27.md       # 第4章 4-1〜4-5途中
+│   ├── 2026-06-28_07-01.md # 第4章 4-5後半〜4-12
+│   ├── 2026-07-02_06.md    # 第5〜6章（News／Menu）
+│   └── 2026-07-07.md       # 第7章（Contact）
+│
+├── chapter2/               # HTMLの基本
+│   ├── c2-02-1/ c2-05-1/ c2-06-1/ c2-07-1/   # サンプル1つの節
+│   └── c2-08/ … c2-14/                        # 複数サンプルの節（中に c2-10-1〜c2-10-4 等の連番）
+│
+├── chapter3/               # CSSの基本
+│   └── c3-02〜c3-07／c3-10〜c3-19             # ※3-1・3-8・3-9 は概念中心のためコードなし
+│
+├── chapter4/               # WCB CAFE：シングルカラム（ホーム）
+│   └── c4-03〜c4-12
+├── chapter5/               # WCB CAFE：2カラム（News）
+│   └── c5-03〜c5-07
+├── chapter6/               # WCB CAFE：タイル型（Menu）
+│   └── c6-03〜c6-06
+└── chapter7/               # WCB CAFE：外部メディア（Contact）
+    └── c7-02〜c7-10
 ```
 
 > ※「WCB CAFE」は第4〜6章で継続制作する同一サイトです（`index.html`＝ホーム／`news.html`＝第5章／`menu.html`＝第6章）。上記は章ごとの追加分を分けて表記した想定構成のため、実際は1つのサイトフォルダーにまとめて配置している場合があります。
